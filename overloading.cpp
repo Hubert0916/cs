@@ -21,13 +21,12 @@ class CWin
         {
             return width*height;
         }
+        friend int operator>(const int &, CWin &);
 };
-
 int operator>(const int &var,CWin &win)
 {
     return (var > win.area());
 }
-
 int main()
 {
     CWin win1('A',70,80);
@@ -43,10 +42,11 @@ int main()
     else
         cout << "win1 is smaller than 7000" <<  endl;
 
-    if(4500>win2)
+     if(4500>win2)
         cout << "win2 is smaller than 4500" << endl;
     else
         cout << "win2 is larger than 4500" << endl;
+   
 
     return 0;
 }
