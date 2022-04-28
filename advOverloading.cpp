@@ -16,7 +16,7 @@ class CWin
             id=i;
             strcpy(title,text);
         }
-        CWin operator=(const CWin &win)
+        CWin operator=(const CWin &win) //CWin後加個＆才正確
         {
             id=win.id;
             strcpy(this->title,win.title);
@@ -32,7 +32,6 @@ class CWin
         }
         CWin(const CWin &win)
         {
-            cout << "拷貝";
             id=win.id;
             strcpy(title,win.title);
         }
@@ -48,8 +47,9 @@ int main(void)
     win2.show();
     win3.show();
 
-    win1.operator=(win2.operator=(win3));
-    cout << endl << "設定完之後..." << endl;
+    win1=win2=win3;//win1.operator=(win2.operator=(win3))
+
+    cout << endl << "after..." << endl;
     win1.show();
     win2.show();
     win3.show();
