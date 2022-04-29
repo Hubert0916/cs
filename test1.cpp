@@ -17,7 +17,6 @@ class CWin
         {
             id=win.id;
             strcpy(this->title,win.title);
-            
             return *this;
         }
         void show(void)
